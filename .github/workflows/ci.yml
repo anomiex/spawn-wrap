@@ -16,6 +16,17 @@ jobs:
           shell: bash
         - os: windows-latest
           shell: powershell
+        exclude:
+        # Presumably these worked at some point in the past, but now actions/setup-node gives errors like
+        #   Unable to find Node version '14.x' for platform darwin and architecture arm64.
+        - node-version: 12.x
+          platform:
+            os: macos-latest
+            shell: bash
+        - node-version: 14.x
+          platform:
+            os: macos-latest
+            shell: bash
       fail-fast: false
 
     runs-on: ${{ matrix.platform.os }}
@@ -25,7 +36,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v1.1.0
+        uses: actions/checkout@v4
 
       - name: Use Nodejs ${{ matrix.node-version }}
         uses: actions/setup-node@v1
