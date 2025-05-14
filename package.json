@@ -4,13 +4,13 @@
   "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
   "main": "index.js",
   "engines": {
-    "node": ">=8"
+    "node": ">=14"
   },
   "dependencies": {
     "foreground-child": "^2.0.0",
     "is-windows": "^1.0.2",
     "make-dir": "^3.0.0",
-    "rimraf": "^3.0.0",
+    "rimraf": "^4.0.0",
     "signal-exit": "^3.0.2",
     "which": "^2.0.1"
   },
