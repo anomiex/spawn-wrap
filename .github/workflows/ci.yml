@@ -6,7 +6,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
+        node-version: [14.x, 16.x, 17.x]
         platform:
         - os: ubuntu-latest
           shell: bash
@@ -19,10 +19,6 @@ jobs:
         exclude:
         # Presumably these worked at some point in the past, but now actions/setup-node gives errors like
         #   Unable to find Node version '14.x' for platform darwin and architecture arm64.
-        - node-version: 12.x
-          platform:
-            os: macos-latest
-            shell: bash
         - node-version: 14.x
           platform:
             os: macos-latest
